@@ -1,0 +1,28 @@
+#drawArea {
+   
+    aspect-ratio: 1/1;
+    width:1000px;
+    heigth:1000px;
+    display: flex;
+    flex-direction: column;
+    border: 4px solid black;
+}
+
+#page {
+    display:flex;
+    resize:horizontal;
+    
+}
+
+.row {
+    display:flex;
+    height : 100%;
+    flex: 1 1 0;
+}
+
+.square {
+    box-sizing: border-box;
+    flex : 1 1 0;
+    width: auto;
+    border:1px solid black;
+}
