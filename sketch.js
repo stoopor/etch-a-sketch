@@ -3,11 +3,18 @@ var mouseIsDown = false;
 
 function fillIfMouseDown(e)
 {
-    console.log(e.buttons);
-    if(e.buttons == 1 || e.buttons == 3)
-    {
-        this.style.backgroundColor = 'black';
-    }   
+    switch(e.pointerType) {
+        case "mouse":
+            if(e.buttons == 1 || e.buttons == 3) {
+                this.style.backgroundColor = 'black';
+            } 
+            break;
+        case "touch":
+        case "pen" :
+            this.style.backgroundColor = 'black';
+        }
+
+      
 }
 
 function fill(e) {
@@ -25,7 +32,7 @@ function createGrid(size)
             let newSquare = document.createElement('div');
             newSquare.classList.add('square');
             newSquare.addEventListener('mousedown', fill);
-            newSquare.addEventListener('mouseover', fillIfMouseDown);
+            newSquare.addEventListener('pointerover', fillIfMouseDown);
             newRow.appendChild(newSquare);
         }
         drawArea.appendChild(newRow);
